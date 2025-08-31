@@ -5,21 +5,297 @@
   <title>Illia's portfolio</title>
   <style>
     body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background: #fff;
+      font-family: Arial, sans-serif;
       margin: 0;
-      text-align: center;
+      padding: 0;
+    }
+    .container {
+      width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border: 4px solid #d8aab2;
+      padding: 20px 30px 30px 30px;
+      box-sizing: border-box;
+    }
+    .main-title {
+      background: #ffdda9;
+      font-size: 2.2rem;
+      font-weight: bold;
+      padding: 8px 0 8px 10px;
+      border-bottom: 2px solid #ffffff;
+      margin-bottom: 0;
+      font-family: Arial #000000, Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      background: #ffdda9;
+      color: #a33;
+      display: inline-block;
+      padding: 2px 10px;
+      margin: 10px 0 0 0;
+      font-weight: bold;
+      border-radius: 3px;
+      font-size: 1rem;
+    }
+    .section-title {
+      background: #ffdda9;
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 5px 0 5px 10px;
+      border-bottom: 2px solid #b97b8b;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-family: Arial Black, Arial, sans-serif;
+    }
+    .evolution {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .evolution-text {
+      flex: 1;
+      font-size: 1.05rem;
+      padding-top: 10px;
+    }
+    .evolution-text .highlight {
+      background: #ffe9a7;
+      border: 2px solid #eebfc7;
+      border-bottom: 3px solid #b97b8b;
+      border-right: 3px solid #b97b8b;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-weight: bold;
+      font-size: 0.98em;
+      margin: 0 2px;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+    .evolution-img {
+      margin-left: 30px;
+      border: 3px solid #d33;
+      background: #fff;
+      padding: 8px 12px 0 12px;
+      border-radius: 5px;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .evolution-img img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+    .forms-section {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .forms-title {
+      font-weight: bold;
+    }
+    .forms-list {
+      background: #fffbf8;
+      border: 2px solid #ffffff;
+      padding: 12px 18px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      text-align: left;
+      width: 97%;
+      border-radius: 4px;
+    }
+    .forms-list ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .forms-list li {
+      margin-bottom: 4px;
+    }
+    .forms-list .media {
+      font-style: italic;
+      font-size: 0.98em;
+    }
+    .forms-list a {
+      color: #d18b00;
+      text-decoration: underline dotted;
+    }
+    .entries-section {
+      margin-top: 30px;
+    }
+    .entries-title {
+      background: #ffdda9;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 5px 0 5px 10px;
+      border-bottom: 2px solid #b97b8b;
+      margin-bottom: 10px;
+      font-family: Arial Black, Arial, sans-serif;
+    }
+    .entries-table-outer {
+      border-top: 4px double #b97b8b;
+      border-left: 4px double #b97b8b;
+      border-bottom: 6px double #3b3b3b;
+      border-right: 6px double #3b3b3b;
+      background: #fff;
+      margin-bottom: 0;
+      margin-right: 0;
+      flex: 1 1 auto;
+    }
+    .entries-table {
+      border: none;
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-bottom: 0;
+    }
+    .entries-table th, .entries-table td {
+      border: 1px solid #000000;
+      padding: 6px 10px;
+      text-align: left;
+      font-size: 0.98rem;
+    }
+    .entries-table th {
+      background: #ffdda9;
+      color: rgb(57, 3, 255);
+      font-weight: bold;
+    }
+    .entries-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    .entries-table-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .entries-img.custom-img-border {
+      border: 4px solid rgb(235, 200, 3);
+      background: #fff;
+      padding: 5px 10px 0 10px;
+      border-radius: 5px;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+    .entries-img.custom-img-border img {
+      width: 70px;
+      height: 70px;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .footer-link {
+      margin-top: 30px;
+      font-size: 1rem;
+    }
+    .footer-link a {
+      color: #3b6fd1;
+      text-decoration: underline dotted;
+    }
+    .custom-yellow-border {
+      background: #ffe7d5;
+      border-top: 2px solid #bfae7c;
+      border-left: 2px solid #bfae7c;
+      border-bottom: 4px solid #000;
+      border-right: 4px solid #000;
+      border-radius: 0;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      padding: 12px 18px;
+    }
+    .custom-table-border {
+      border-top: 4px solid #ffd5e0;
+      border-left: 4px solid #b97b8b;
+      border-bottom: 6px solid #3b3b3b;
+      border-right: 6px solid #3b3b3b;
+      padding: 10px;
+      display: flex;
+      align-items: flex-start;
+      background: #fff;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>
-    <span style="color: blue;">Illia's</span>
-    <span style="color: rgb(221, 17, 31);">portfolio</span>
-  </h1>
-  <p>Willkommen auf meiner Portfolio-Seite!</p>
-  <em>In raw HTML</em>
-  <img src="https://cdn.pixabay.com/photo/2022/08/22/02/05/logo-7402513_1280.png" alt="Image" style="width:300px; height:300px;">
+  <div class="container">
+    <div class="main-title">Illia (Portfolio)</div>
+    <div class="subtitle">Web Developer &amp; Designer</div>
+
+    <div class="section-title">Evolution</div>
+    <div class="evolution">
+      <div class="evolution-text">
+        Illia evolves from <span class="highlight">Student</span> and evolves into <span class="highlight">Professional</span>.<br>
+        In the future, evolves into <span class="highlight">Expert</span>.
+      </div>
+      <div class="evolution-img">
+        <img src="https://cdn.pixabay.com/photo/2022/08/22/02/05/logo-7402513_1280.png" alt="Illia's photo">
+      </div>
+    </div>
+
+    <div class="section-title">Forms</div>
+    <div class="forms-section">
+      Illia has <b>4 forms</b>:
+      <div class="forms-list custom-yellow-border">
+        <ul>
+          <li>Frontend Developer</li>
+          <li>Backend Developer</li>
+          <li>UI/UX Designer</li>
+          <li>Fullstack Developer</li>
+          <li class="media">...in other medias:
+            <ul>
+              <li><a href="#">Open Source Contributor</a></li>
+              <li><a href="#">Tech Blogger</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entries-section">
+      <div class="entries-title">Portfolio entries</div>
+      <div class="entries-table-container">
+        <div class="entries-table-outer">
+          <table class="entries-table">
+            <tr>
+              <th>Project</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Portfolio Website</td>
+              <td>Frontend</td>
+              <td>Personal portfolio built with HTML, CSS, and JavaScript.</td>
+            </tr>
+            <tr>
+              <td>Blog Platform</td>
+              <td>Fullstack</td>
+              <td>Blog platform with user authentication and CRUD features.</td>
+            </tr>
+            <tr>
+              <td>UI Kit</td>
+              <td>Design</td>
+              <td>Reusable UI components for web projects.</td>
+            </tr>
+            <tr>
+              <td>API Service</td>
+              <td>Backend</td>
+              <td>RESTful API for data management and integration.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entries-img custom-img-border">
+          <img src="https://cdn.pixabay.com/photo/2022/08/22/02/05/logo-7402513_1280.png" alt="Illia's photo small">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-link">
+      <a href="#">Contact me</a>
+    </div>
+  </div>
 </body>
 </html>
